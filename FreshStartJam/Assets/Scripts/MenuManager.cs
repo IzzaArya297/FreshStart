@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
     float dclick_threshold = 0.3f, timerdclick = 0;
 
-    public GameObject errorPanel;
+    public GameObject errorPanel, installPanel;
+    public Animator animInstall;
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+        //PlayerPrefs.DeleteAll();
+        if (PlayerPrefs.HasKey("FirstOpen"))
+        {
+            installPanel.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -29,8 +37,26 @@ public class MenuManager : MonoBehaviour
         else
         {
             Debug.Log("double click");
-            //call the DoubleClick() function, not shown
+            errorPanel.SetActive(true);
         }
         timerdclick = Time.time;
+    }
+
+    public void DoFreshStart()
+    {
+        errorPanel.SetActive(false);
+        installPanel.SetActive(true);
+        animInstall.Play("firstReload");
+        PlayerPrefs.SetInt("FirstOpen", 0);
+    }
+
+    public void CloseError()
+    {
+        errorPanel.SetActive(false);
+    }
+
+    public void GoToLevel(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 }
