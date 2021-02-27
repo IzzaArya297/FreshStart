@@ -3862,7 +3862,7 @@ GameObject:
   - component: {fileID: 1672028341}
   - component: {fileID: 1672028340}
   - component: {fileID: 1672028339}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3884,10 +3884,12 @@ MonoBehaviour:
   speed: 5
   distance: 0.03
   jumpForce: 700
+  invulTime: 2
   currentInput: {fileID: 0}
   jumpSound: {fileID: 0}
   anim: {fileID: 0}
   kesetrum: {fileID: 0}
+  canMove: 1
 --- !u!50 &1672028340
 Rigidbody2D:
   serializedVersion: 4
@@ -4133,7 +4135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2393594350833530459, guid: 623ae90341295ff43baa421e61112249, type: 3}
       propertyPath: startRate
-      value: 0.5
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2393594350833530459, guid: 623ae90341295ff43baa421e61112249, type: 3}
       propertyPath: maxRate
@@ -4214,7 +4216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4020451382725140388, guid: 01dd7c971a7766e4183c73284dede60c, type: 3}
       propertyPath: startRate
-      value: 0.5
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4020451382725140388, guid: 01dd7c971a7766e4183c73284dede60c, type: 3}
       propertyPath: maxRate

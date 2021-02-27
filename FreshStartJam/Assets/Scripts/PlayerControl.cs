@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public float speed = 8f, distance, jumpForce = 10f;
+    public float speed = 8f, distance, jumpForce = 10f, invulTime = 2f;
+    public int health = 2;
     bool lookRight = true;
 
-    private Rigidbody2D rb;
+    [HideInInspector]
+    public Rigidbody2D rb;
+
     BoxCollider2D boxCollider;
-    private LayerMask m_WhatIsGround;
+    private LayerMask m_WhatIsGround;   
 
     [HideInInspector]
     public GameObject currentInput;
@@ -19,6 +22,9 @@ public class PlayerControl : MonoBehaviour
 
     public Animator anim;
     public AnimationClip kesetrum;
+
+    public bool canMove = true, invulnerable;
+    
 
     private void Awake()
     {
@@ -37,17 +43,21 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        PlayerMove();
+        if(canMove) PlayerMove();
     }
 
     private void Update()
     {
         PlayerJump();
+        if(health == 0)
+        {
+            //matii
+        }
     }
 
     void PlayerJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && GroundCheck())
+        if (Input.GetKeyDown(KeyCode.Space) && GroundCheck() && canMove)
         {
             rb.AddForce(new Vector2(0f, jumpForce));
             //audioSource.PlayOneShot(jumpSound);
@@ -98,6 +108,33 @@ public class PlayerControl : MonoBehaviour
     {
         lookRight = !lookRight;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(!invulnerable && collision.gameObject.tag == "Electro")
+        {
+            Electro electro = collision.GetComponent<Electro>();
+            health--;
+            Vector2 direction = (transform.position - electro.transform.position).normalized;
+            StartCoroutine(duar(direction * electro.pushForce));
+            StartCoroutine(invulnerability(invulTime));
+        }
+    }
+
+    IEnumerator invulnerability(float invulTime)
+    {
+        invulnerable = true;
+        yield return new WaitForSeconds(invulTime);
+        invulnerable = false;
+    }
+
+    IEnumerator duar(Vector2 force)
+    {
+        canMove = false;
+        rb.velocity = (force);
+        yield return new WaitForSeconds(1f);
+        canMove = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
