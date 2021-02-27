@@ -6,6 +6,7 @@ public class Electro : MonoBehaviour
 {
     //Set speed
     public float startSpeed, maxSpeed = 0.2f;
+    public float pushForce;
     float speed;
     //Increasing value for lerp
     float moveSpeed;
@@ -41,6 +42,8 @@ public class Electro : MonoBehaviour
         
         //round lerp value down to int
         indexNum = Mathf.FloorToInt(moveSpeed);
+
+        if (inputPath.points.Count < indexNum + 3) Destroy(gameObject);
         //increase lerp value relative to the distance between points to keep the speed consistent.
         moveSpeed += speed / Vector3.Distance(inputPath.points[indexNum + 1], inputPath.points[indexNum + 2]);
         //and lerp
@@ -51,4 +54,5 @@ public class Electro : MonoBehaviour
     {
         speed = (startSpeed + (maxSpeed - startSpeed) * inputPath.points.Count / inputPath.maxLine) * inputPath.multiplier;
     }
+
 }

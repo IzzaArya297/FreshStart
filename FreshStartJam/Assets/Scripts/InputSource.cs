@@ -43,8 +43,7 @@ public class InputSource : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lineCreated) {normalize();}
-        //Debug.Log(this.name + deltaSpawnElectro);
+
     }
 
     private void FixedUpdate()
