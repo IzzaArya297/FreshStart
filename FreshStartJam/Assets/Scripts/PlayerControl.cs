@@ -17,6 +17,10 @@ public class PlayerControl : MonoBehaviour
     [HideInInspector]
     public GameObject currentInput;
 
+    public GameObject weapon;
+    public float atkRadius;
+    public LayerMask obsLayer;
+
     //private AudioSource audioSource;
     public AudioClip jumpSound;
 
@@ -49,9 +53,14 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         PlayerJump();
-        if(health == 0)
+        if(health <= 0)
         {
             //matii
+            canMove = false;
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Attack();
         }
     }
 
@@ -83,6 +92,8 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+
+
     bool GroundCheck()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, distance, m_WhatIsGround);
@@ -112,14 +123,53 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!invulnerable && collision.gameObject.tag == "Electro")
+
+        if (!invulnerable)
         {
-            Electro electro = collision.GetComponent<Electro>();
-            health--;
-            Vector2 direction = (transform.position - electro.transform.position).normalized;
-            StartCoroutine(duar(direction * electro.pushForce));
-            StartCoroutine(invulnerability(invulTime));
+            if (collision.gameObject.tag == "Electro")
+            {
+                Electro electro = collision.GetComponent<Electro>();
+                health--;
+                Vector2 direction = (transform.position - electro.transform.position).normalized;
+                StartCoroutine(duar(direction * electro.pushForce, 1f));
+                StartCoroutine(invulnerability(invulTime));
+            }
+            if(collision.gameObject.tag == "Obstacle")
+            {
+                Obstacle obstacle = collision.GetComponent<Obstacle>();
+                health -= 2;
+                Debug.Log("derrrr");
+                Vector2 direction = (transform.position - obstacle.transform.position).normalized;
+                StartCoroutine(duar(direction * obstacle.pushForce, 0.25f));
+                StartCoroutine(invulnerability(invulTime - invulTime + 0.1f));
+            }
+
+            if(collision.gameObject.tag == "Electrocute")
+            {
+                Obstacle obstacle = collision.GetComponentInParent<Obstacle>();
+                health--;
+                Debug.Log("derrrr");
+                Vector2 direction = (transform.position - obstacle.transform.position).normalized;
+                StartCoroutine(duar(direction * obstacle.pushForce, 0.25f));
+                StartCoroutine(invulnerability(invulTime));
+            }
+            
         }
+
+    }
+
+    void Attack()
+    {
+        Collider2D[] destroyables = Physics2D.OverlapCircleAll(weapon.transform.position, atkRadius, obsLayer);
+
+        foreach(Collider2D obs in destroyables)
+        {
+            
+            Obstacle obstacle = obs.gameObject.GetComponent<Obstacle>();
+            obstacle.takeDamage();
+        }
+        
+        
     }
 
     IEnumerator invulnerability(float invulTime)
@@ -129,12 +179,17 @@ public class PlayerControl : MonoBehaviour
         invulnerable = false;
     }
 
-    IEnumerator duar(Vector2 force)
+    IEnumerator duar(Vector2 force, float stunned)
     {
         canMove = false;
-        rb.velocity = (force);
-        yield return new WaitForSeconds(1f);
+        rb.AddForce(force);
+        yield return new WaitForSeconds(stunned);
         canMove = true;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(weapon.transform.position, atkRadius);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
