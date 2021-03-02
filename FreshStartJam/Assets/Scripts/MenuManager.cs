@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -17,7 +16,6 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.DeleteAll();
         if (PlayerPrefs.HasKey("FirstOpen"))
         {
             LevelPanel.SetActive(true);
@@ -62,7 +60,7 @@ public class MenuManager : MonoBehaviour
 
     public void GoToLevel(int index)
     {
-        SceneManager.LoadScene(index);
+        SceneLoader.sceneLoader.ChangeScene(index);
     }
 
     public void ChangePanel()
