@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public float speed = 8f, distance, jumpForce = 10f;
+    public float speed = 8f, distance, jumpForce = 10f, invulTime = 2f;
+    public int health = 2;
     bool lookRight = true;
 
-    private Rigidbody2D rb;
+    [HideInInspector]
+    public Rigidbody2D rb;
+
     BoxCollider2D boxCollider;
-    private LayerMask m_WhatIsGround;
+    private LayerMask m_WhatIsGround;   
 
     [HideInInspector]
     public GameObject currentInput;
+
+    public GameObject weapon;
+    public float atkRadius;
+    public LayerMask obsLayer;
 
     //private AudioSource audioSource;
     public AudioClip jumpSound;
 
     public Animator anim;
     public AnimationClip kesetrum;
+
+    public bool canMove = true, invulnerable;
+    
 
     private void Awake()
     {
@@ -37,17 +47,26 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        PlayerMove();
+        if(canMove) PlayerMove();
     }
 
     private void Update()
     {
         PlayerJump();
+        if(health <= 0)
+        {
+            //matii
+            canMove = false;
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Attack();
+        }
     }
 
     void PlayerJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && GroundCheck())
+        if (Input.GetKeyDown(KeyCode.Space) && GroundCheck() && canMove)
         {
             rb.AddForce(new Vector2(0f, jumpForce));
             //audioSource.PlayOneShot(jumpSound);
@@ -72,6 +91,8 @@ public class PlayerControl : MonoBehaviour
             //anim.SetBool("Walk", false);
         }
     }
+
+
 
     bool GroundCheck()
     {
@@ -98,6 +119,77 @@ public class PlayerControl : MonoBehaviour
     {
         lookRight = !lookRight;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (!invulnerable)
+        {
+            if (collision.gameObject.tag == "Electro")
+            {
+                Electro electro = collision.GetComponent<Electro>();
+                health--;
+                Vector2 direction = (transform.position - electro.transform.position).normalized;
+                StartCoroutine(duar(direction * electro.pushForce, 1f));
+                StartCoroutine(invulnerability(invulTime));
+            }
+            if(collision.gameObject.tag == "Obstacle")
+            {
+                Obstacle obstacle = collision.GetComponent<Obstacle>();
+                health -= 2;
+                Debug.Log("derrrr");
+                Vector2 direction = (transform.position - obstacle.transform.position).normalized;
+                StartCoroutine(duar(direction * obstacle.pushForce, 0.25f));
+                StartCoroutine(invulnerability(invulTime - invulTime + 0.1f));
+            }
+
+            if(collision.gameObject.tag == "Electrocute")
+            {
+                Obstacle obstacle = collision.GetComponentInParent<Obstacle>();
+                health--;
+                Debug.Log("derrrr");
+                Vector2 direction = (transform.position - obstacle.transform.position).normalized;
+                StartCoroutine(duar(direction * obstacle.pushForce, 0.25f));
+                StartCoroutine(invulnerability(invulTime));
+            }
+            
+        }
+
+    }
+
+    void Attack()
+    {
+        Collider2D[] destroyables = Physics2D.OverlapCircleAll(weapon.transform.position, atkRadius, obsLayer);
+
+        foreach(Collider2D obs in destroyables)
+        {
+            
+            Obstacle obstacle = obs.gameObject.GetComponent<Obstacle>();
+            obstacle.takeDamage();
+        }
+        
+        
+    }
+
+    IEnumerator invulnerability(float invulTime)
+    {
+        invulnerable = true;
+        yield return new WaitForSeconds(invulTime);
+        invulnerable = false;
+    }
+
+    IEnumerator duar(Vector2 force, float stunned)
+    {
+        canMove = false;
+        rb.AddForce(force);
+        yield return new WaitForSeconds(stunned);
+        canMove = true;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(weapon.transform.position, atkRadius);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

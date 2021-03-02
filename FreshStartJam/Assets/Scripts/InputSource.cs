@@ -23,6 +23,8 @@ public class InputSource : MonoBehaviour
     [HideInInspector]
     public List<Electro> electros = new List<Electro>();
 
+    //public GameObject startingPoints;
+
     [HideInInspector]
     public LineRenderer cable;
 
@@ -33,18 +35,20 @@ public class InputSource : MonoBehaviour
     public float deltaSpawnElectro = 0;
 
     public float startRate = 2f, maxRate = 0.8f, multiplier = 2f;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         cable = GetComponent<LineRenderer>();
+        //resetLine();
+        //makeStartLine();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lineCreated) {normalize();}
-        //Debug.Log(this.name + deltaSpawnElectro);
+
     }
 
     private void FixedUpdate()
@@ -52,6 +56,7 @@ public class InputSource : MonoBehaviour
         if (inputCondition == Condition.Taken)
             cable.SetPosition(1, player.transform.position);
         else if (inputCondition == Condition.Bought)
+
             drawLine();
         //else if (inputCondition == Condition.Connected)
         //    StartCoroutine(SpawnElectro());
@@ -138,4 +143,30 @@ public class InputSource : MonoBehaviour
         setElectroRate();
         
     }
+    /*
+    void makeStartLine()
+    {
+        //List<Vector3> pos = new List<Vector3>();
+        points.Add(source.position);
+        int i = 0;
+        foreach (Transform child in startingPoints.transform)
+        {
+            points.Add(child.position);
+            child.gameObject.GetComponent<Obstacle>().index = i + 2;
+            i++;
+        }
+        cable.positionCount += points.Count() - 2;
+        cable.SetPositions(points.ToArray());
+
+    }
+
+    public void deleteObs(int i)
+    {
+        
+        points.RemoveAt(i);
+        cable.positionCount--;
+        cable.SetPositions(points.ToArray());
+
+    }
+    */
 }

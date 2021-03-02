@@ -26,8 +26,10 @@ public class OutputSource : MonoBehaviour
         if(inputType.lineCreated && fastMode)
         {
             inputType.CancelInvoke("SpawnElectro");
+            inputType.normalize();
+            inputType.player.canMove = true;
             fastMode = false;
-            inputType.InvokeRepeating("SpawnElectro", 0.1f, 1 / inputType.deltaSpawnElectro);
+            inputType.InvokeRepeating("SpawnElectro", 1 / inputType.deltaSpawnElectro, 1 / inputType.deltaSpawnElectro);
         }
     }
 
@@ -40,12 +42,15 @@ public class OutputSource : MonoBehaviour
                 //Set deltaSpawnRate
                 inputType.setElectroRate();
 
+                inputType.player.canMove = false;
+                inputType.player.rb.velocity = Vector3.zero;
+
                 inputType.cable.positionCount++;
                 inputType.points.Add(source.position);
                 inputType.cable.SetPositions(inputType.points.ToArray());
                 inputType.inputCondition = Condition.Connected;
                 //Spawn electro sebanyak deltaSpawnElectro perdetik
-                inputType.InvokeRepeating("SpawnElectro", 0.1f, 1/inputType.deltaSpawnElectro);
+                inputType.InvokeRepeating("SpawnElectro", 1 / inputType.deltaSpawnElectro, 1/inputType.deltaSpawnElectro);
                 collision.gameObject.GetComponent<PlayerControl>().currentInput = null;
                 GameManager.gameManager.kabelTerhubung++;
                 if (GameManager.gameManager.kabelTerhubung == GameManager.gameManager.kabelDiperlukan)
