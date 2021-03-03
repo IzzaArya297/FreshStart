@@ -56,7 +56,6 @@ public class SceneLoader : MonoBehaviour
         anim.Play("FadeOut");
         yield return new WaitForSeconds(0.9f);
         panel.SetActive(false);
-        Debug.Log("a");
     }
 
     public void GoToHome()

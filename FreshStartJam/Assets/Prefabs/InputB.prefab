@@ -243,12 +243,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  deltaDistance: 0.45
+  deltaDistance: 0.4
   source: {fileID: 2393594350261494776}
   electro: {fileID: 9161937008691143523, guid: e87b7dcaaa89eba42a0b694e287e1c45, type: 3}
   maxLine: 125
   lineCreated: 0
-  firstObsGone: 0
   points: []
   electros: []
   cable: {fileID: 0}

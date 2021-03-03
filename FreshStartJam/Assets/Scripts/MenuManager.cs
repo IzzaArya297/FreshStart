@@ -81,6 +81,7 @@ public class MenuManager : MonoBehaviour
     {
         for(int i = 0; i < levelInstallButton.Length; i++)
         {
+            Debug.Log(PlayerPrefs.HasKey(levelInstallButton[i].gameObject.name));
             if (!PlayerPrefs.HasKey(levelInstallButton[i].gameObject.name))
                 break;
             ColorBlock colors = levelInstallButton[i].colors;

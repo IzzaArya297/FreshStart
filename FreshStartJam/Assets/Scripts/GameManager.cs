@@ -8,13 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
 
-    public GameObject wallHome;
-
     public int kabelDiperlukan;
-
-    [HideInInspector]
-    public int kabelTerhubung;
-
+    public Animator wall;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +38,15 @@ public class GameManager : MonoBehaviour
         SceneLoader.sceneLoader.ChangeScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void Done()
+    public void OpenWall()
     {
+        wall.Play("openWall");
         Debug.Log("a");
+    }
+
+    private void OnTriggerEnter2D()
+    {
+        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 1);
+        SceneLoader.sceneLoader.ChangeScene(0);
     }
 }

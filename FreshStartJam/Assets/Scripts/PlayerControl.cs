@@ -11,7 +11,7 @@ public class PlayerControl : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rb;
 
-    BoxCollider2D boxCollider;
+    public BoxCollider2D boxCollider;
     private LayerMask m_WhatIsGround;   
 
     [HideInInspector]
@@ -33,7 +33,7 @@ public class PlayerControl : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        //boxCollider = GetComponent<BoxCollider2D>();
         m_WhatIsGround = LayerMask.GetMask("Ground");
         anim = GetComponent<Animator>();
         //audioSource = GetComponent<AudioSource>();
@@ -49,11 +49,12 @@ public class PlayerControl : MonoBehaviour
     void FixedUpdate()
     {
         if(canMove) PlayerMove();
+        else anim.SetBool("Jalan", false);
     }
 
     private void Update()
     {
-        PlayerJump();
+        PlayerJump(GroundCheck());
         if(health <= 0)
         {
             //matii
@@ -65,9 +66,11 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void PlayerJump()
+    void PlayerJump(bool canJump)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && GroundCheck() && canMove)
+        if (!canJump)
+            return;
+        if (Input.GetKeyDown(KeyCode.Space) && canMove)
         {
             rb.AddForce(new Vector2(0f, jumpForce));
             anim.SetTrigger("Loncat");
@@ -114,7 +117,7 @@ public class PlayerControl : MonoBehaviour
         //Buat debug biar bisa liat collidernya
         //Debug.DrawRay(boxCollider.bounds.center + new Vector3(boxCollider.bounds.extents.x, 0), Vector2.down * (boxCollider.bounds.extents.y + distance), rayColor);
         //Debug.DrawRay(boxCollider.bounds.center - new Vector3(boxCollider.bounds.extents.x, 0), Vector2.down * (boxCollider.bounds.extents.y + distance), rayColor);
-        //Debug.DrawRay(boxCollider.bounds.center - new Vector3(boxCollider.bounds.extents.x, boxCollider.bounds.extents.y + distance), Vector2.right * (boxCollider.bounds.extents.x * 2f), rayColor);
+        //Debug.DrawRay(boxCollider.bounds.center - new Vector3(boxCollider.bounds.extents.x, boxCollider.bounds.extents.y + distance + 0.5f), Vector2.right * (boxCollider.bounds.extents.x * 2f), rayColor);
 
         return raycastHit.collider != null;
     }
@@ -141,8 +144,8 @@ public class PlayerControl : MonoBehaviour
             if(collision.gameObject.tag == "Obstacle")
             {
                 Obstacle obstacle = collision.GetComponent<Obstacle>();
-                health -= 2;
-                Debug.Log("derrrr");
+                health--;
+                //Debug.Log("derrrr");
                 Vector2 direction = (transform.position - obstacle.transform.position).normalized;
                 StartCoroutine(duar(direction * obstacle.pushForce, 0.25f));
                 StartCoroutine(invulnerability(invulTime - invulTime + 0.1f));
@@ -152,7 +155,7 @@ public class PlayerControl : MonoBehaviour
             {
                 Obstacle obstacle = collision.GetComponentInParent<Obstacle>();
                 health--;
-                Debug.Log("derrrr");
+                //Debug.Log("derrrr");
                 Vector2 direction = (transform.position - obstacle.transform.position).normalized;
                 StartCoroutine(duar(direction * obstacle.pushForce, 0.25f));
                 StartCoroutine(invulnerability(invulTime));
@@ -189,20 +192,5 @@ public class PlayerControl : MonoBehaviour
         rb.AddForce(force);
         yield return new WaitForSeconds(stunned);
         canMove = true;
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(weapon.transform.position, atkRadius);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        //if (collision.gameObject.CompareTag("Electro"))
-        //{
-        //    anim.SetTrigger("Kesetrum");
-        //    GameManager.gameManager.Invoke("GameOver", kesetrum.length);
-        //}
     }
 }

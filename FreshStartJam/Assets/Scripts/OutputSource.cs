@@ -52,11 +52,8 @@ public class OutputSource : MonoBehaviour
                 //Spawn electro sebanyak deltaSpawnElectro perdetik
                 inputType.InvokeRepeating("SpawnElectro", 1 / inputType.deltaSpawnElectro, 1/inputType.deltaSpawnElectro);
                 collision.gameObject.GetComponent<PlayerControl>().currentInput = null;
-                GameManager.gameManager.kabelTerhubung++;
-                if (GameManager.gameManager.kabelTerhubung == GameManager.gameManager.kabelDiperlukan)
-                {
-                    GameManager.gameManager.Done();
-                }
+                if (--GameManager.gameManager.kabelDiperlukan == 0)
+                    GameManager.gameManager.OpenWall();
             }
             collision.gameObject.layer = 11;
         }
