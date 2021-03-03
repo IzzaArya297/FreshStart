@@ -3444,7 +3444,9 @@ MonoBehaviour:
   uninstallPanel: {fileID: 1247219991}
   installPanel: {fileID: 1377823639}
   animInstall: {fileID: 114889367}
-  levelInstallButton: []
+  levelInstallButton:
+  - {fileID: 395525555}
+  - {fileID: 1655802611}
   levelUninstallButton:
   - {fileID: 2038054217}
   - {fileID: 2053555879}

@@ -161,12 +161,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  deltaDistance: 0.45
+  deltaDistance: 0.4
   source: {fileID: 4020451383050010355}
   electro: {fileID: 9161937008691143523, guid: e87b7dcaaa89eba42a0b694e287e1c45, type: 3}
   maxLine: 125
   lineCreated: 0
-  firstObsGone: 0
   points: []
   electros: []
   cable: {fileID: 0}
@@ -298,7 +297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4020451383050010364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.26797682, y: 0.008000049, z: 0}
+  m_LocalPosition: {x: 0.067, y: 0.004, z: 0}
   m_LocalScale: {x: 0.3609105, y: 0.28544953, z: 0.28544953}
   m_Children: []
   m_Father: {fileID: 4020451382725140391}
@@ -344,12 +343,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: fd5aa6d3e9cf97f4f96a576b8f1c0d69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 535d5ac1d7e775945becbf3fa5a3e6b6, type: 3}
   m_Color: {r: 0.27044016, g: 1, b: 0.9424749, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.511111, y: 1.5111111}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

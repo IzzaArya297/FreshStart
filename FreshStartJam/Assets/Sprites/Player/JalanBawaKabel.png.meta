@@ -1,0 +1,397 @@
+fileFormatVersion: 2
+guid: a4af10a389b0ea14a9a42d8f13054ebe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2318556797380748609
+    second: JalanBawaKabel_0
+  - first:
+      213: -1409194327681734522
+    second: JalanBawaKabel_1
+  - first:
+      213: -5629613482334380494
+    second: JalanBawaKabel_2
+  - first:
+      213: 2305978776084980228
+    second: JalanBawaKabel_3
+  - first:
+      213: 5018536230921226591
+    second: JalanBawaKabel_4
+  - first:
+      213: -6153703354718626915
+    second: JalanBawaKabel_5
+  - first:
+      213: -539413155951617916
+    second: JalanBawaKabel_6
+  - first:
+      213: -415585837758568427
+    second: JalanBawaKabel_7
+  - first:
+      213: 8601096273261675858
+    second: JalanBawaKabel_8
+  - first:
+      213: -3242408366939002553
+    second: JalanBawaKabel_9
+  - first:
+      213: 4781230724942781602
+    second: JalanBawaKabel_10
+  - first:
+      213: 6868862553415249282
+    second: JalanBawaKabel_11
+  - first:
+      213: 4218768355539608901
+    second: JalanBawaKabel_12
+  - first:
+      213: -9243589009139291
+    second: JalanBawaKabel_13
+  - first:
+      213: 7479892201974182867
+    second: JalanBawaKabel_14
+  - first:
+      213: -5999268877211994178
+    second: JalanBawaKabel_15
+  - first:
+      213: -1683231990154767582
+    second: JalanBawaKabel_16
+  - first:
+      213: -6173637183751938983
+    second: JalanBawaKabel_17
+  - first:
+      213: -4306722514094557893
+    second: JalanBawaKabel_18
+  - first:
+      213: 4664355098704881224
+    second: JalanBawaKabel_19
+  - first:
+      213: 4942653827362826738
+    second: JalanBawaKabel_20
+  - first:
+      213: -6726178475761690609
+    second: JalanBawaKabel_21
+  - first:
+      213: 9136645278503345565
+    second: JalanBawaKabel_22
+  - first:
+      213: 5956057203967186361
+    second: JalanBawaKabel_23
+  - first:
+      213: -8752136096693424306
+    second: JalanBawaKabel_24
+  - first:
+      213: 6525608451091147684
+    second: JalanBawaKabel_25
+  - first:
+      213: -8148041900216463803
+    second: JalanBawaKabel_26
+  - first:
+      213: 8191859767388055954
+    second: JalanBawaKabel_27
+  - first:
+      213: -7928393176165080805
+    second: JalanBawaKabel_28
+  - first:
+      213: 1343657396831287885
+    second: JalanBawaKabel_29
+  - first:
+      213: 1743910208199491527
+    second: JalanBawaKabel_30
+  - first:
+      213: -5165051652171325298
+    second: JalanBawaKabel_31
+  - first:
+      213: 8328994814131109926
+    second: JalanBawaKabel_32
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 45
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JalanBawaKabel_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 0
+        width: 320
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688e807a939817ce0800000000000000
+      internalID: -1409194327681734522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JalanBawaKabel_3
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 0
+        width: 320
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402a220ba7b700020800000000000000
+      internalID: 2305978776084980228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JalanBawaKabel_6
+      rect:
+        serializedVersion: 2
+        x: 2149
+        y: 0
+        width: 320
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488d454b79e9388f0800000000000000
+      internalID: -539413155951617916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JalanBawaKabel_9
+      rect:
+        serializedVersion: 2
+        x: 3069
+        y: 0
+        width: 320
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749a8dfe4c6a003d0800000000000000
+      internalID: -3242408366939002553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JalanBawaKabel_11
+      rect:
+        serializedVersion: 2
+        x: 3958
+        y: 0
+        width: 320
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d6c4b791a135f50800000000000000
+      internalID: 6868862553415249282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JalanBawaKabel_13
+      rect:
+        serializedVersion: 2
+        x: 4872
+        y: 0
+        width: 320
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a919a831092fdff0800000000000000
+      internalID: -9243589009139291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JalanBawaKabel_15
+      rect:
+        serializedVersion: 2
+        x: 5812
+        y: 0
+        width: 320
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7f8bdddb05ebca0800000000000000
+      internalID: -5999268877211994178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JalanBawaKabel_17
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 0
+        width: 320
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c9252d0b5d25aa0800000000000000
+      internalID: -6173637183751938983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
