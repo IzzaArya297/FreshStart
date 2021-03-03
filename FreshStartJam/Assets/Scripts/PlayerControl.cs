@@ -24,7 +24,7 @@ public class PlayerControl : MonoBehaviour
     //private AudioSource audioSource;
     public AudioClip jumpSound;
 
-    public Animator anim;
+    private Animator anim;
     public AnimationClip kesetrum;
 
     public bool canMove = true, invulnerable;
@@ -35,6 +35,7 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         m_WhatIsGround = LayerMask.GetMask("Ground");
+        anim = GetComponent<Animator>();
         //audioSource = GetComponent<AudioSource>();
     }
 
@@ -69,6 +70,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && GroundCheck() && canMove)
         {
             rb.AddForce(new Vector2(0f, jumpForce));
+            anim.SetTrigger("Loncat");
             //audioSource.PlayOneShot(jumpSound);
         }
     }
@@ -81,14 +83,14 @@ public class PlayerControl : MonoBehaviour
         if (move != 0)
         {
             //animasi jalan
-            //anim.SetBool("Walk", true);
+            anim.SetBool("Jalan", true);
             if (move < 0 && lookRight) Flip();
             else if (move > 0 && !lookRight) Flip();
         }
         else
         {
             //idle
-            //anim.SetBool("Walk", false);
+            anim.SetBool("Jalan", false);
         }
     }
 
@@ -97,20 +99,22 @@ public class PlayerControl : MonoBehaviour
     bool GroundCheck()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, distance, m_WhatIsGround);
-        Color rayColor;
+        //Color rayColor;
         if (raycastHit.collider != null)
         {
-            rayColor = Color.green;
+            anim.SetBool("DiTanah", true);
+            //rayColor = Color.green;
         }
         else
         {
-            rayColor = Color.red;
+            anim.SetBool("DiTanah", false);
+            //rayColor = Color.red;
         }
 
         //Buat debug biar bisa liat collidernya
-        Debug.DrawRay(boxCollider.bounds.center + new Vector3(boxCollider.bounds.extents.x, 0), Vector2.down * (boxCollider.bounds.extents.y + distance), rayColor);
-        Debug.DrawRay(boxCollider.bounds.center - new Vector3(boxCollider.bounds.extents.x, 0), Vector2.down * (boxCollider.bounds.extents.y + distance), rayColor);
-        Debug.DrawRay(boxCollider.bounds.center - new Vector3(boxCollider.bounds.extents.x, boxCollider.bounds.extents.y + distance), Vector2.right * (boxCollider.bounds.extents.x * 2f), rayColor);
+        //Debug.DrawRay(boxCollider.bounds.center + new Vector3(boxCollider.bounds.extents.x, 0), Vector2.down * (boxCollider.bounds.extents.y + distance), rayColor);
+        //Debug.DrawRay(boxCollider.bounds.center - new Vector3(boxCollider.bounds.extents.x, 0), Vector2.down * (boxCollider.bounds.extents.y + distance), rayColor);
+        //Debug.DrawRay(boxCollider.bounds.center - new Vector3(boxCollider.bounds.extents.x, boxCollider.bounds.extents.y + distance), Vector2.right * (boxCollider.bounds.extents.x * 2f), rayColor);
 
         return raycastHit.collider != null;
     }

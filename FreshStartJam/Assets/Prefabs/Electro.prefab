@@ -114,5 +114,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 0
   maxSpeed: 0.2
-  pushForce: 700
+  pushForce: 450
   inputPath: {fileID: 0}
