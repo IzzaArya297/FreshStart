@@ -140,6 +140,7 @@ public class PlayerControl : MonoBehaviour
                 Vector2 direction = (transform.position - electro.transform.position).normalized;
                 StartCoroutine(duar(direction * electro.pushForce, 1f));
                 StartCoroutine(invulnerability(invulTime));
+                SceneLoader.sceneLoader.ChangeHealth();
             }
             if(collision.gameObject.tag == "Obstacle")
             {
@@ -149,6 +150,7 @@ public class PlayerControl : MonoBehaviour
                 Vector2 direction = (transform.position - obstacle.transform.position).normalized;
                 StartCoroutine(duar(direction * obstacle.pushForce, 0.25f));
                 StartCoroutine(invulnerability(invulTime - invulTime + 0.1f));
+                SceneLoader.sceneLoader.ChangeHealth();
             }
 
             if(collision.gameObject.tag == "Electrocute")
@@ -159,6 +161,7 @@ public class PlayerControl : MonoBehaviour
                 Vector2 direction = (transform.position - obstacle.transform.position).normalized;
                 StartCoroutine(duar(direction * obstacle.pushForce, 0.25f));
                 StartCoroutine(invulnerability(invulTime));
+                SceneLoader.sceneLoader.ChangeHealth();
             }
             
         }
