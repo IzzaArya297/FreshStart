@@ -1,0 +1,361 @@
+fileFormatVersion: 2
+guid: 5b78dbe88c73ce7458660eb08b127aa2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5413126723398748649
+    second: LoncatBiasa_0
+  - first:
+      213: -4940282880866783764
+    second: LoncatBiasa_1
+  - first:
+      213: 539683637218787
+    second: LoncatBiasa_2
+  - first:
+      213: -553248142681244637
+    second: LoncatBiasa_3
+  - first:
+      213: 2834713522885134659
+    second: LoncatBiasa_4
+  - first:
+      213: -7228093796858506984
+    second: LoncatBiasa_5
+  - first:
+      213: 3380709264988335294
+    second: LoncatBiasa_6
+  - first:
+      213: -3748981695067505724
+    second: LoncatBiasa_7
+  - first:
+      213: 1388710799485525876
+    second: LoncatBiasa_8
+  - first:
+      213: -2659299620279915772
+    second: LoncatBiasa_9
+  - first:
+      213: 1912467701284544741
+    second: LoncatBiasa_10
+  - first:
+      213: 2276289658266812158
+    second: LoncatBiasa_11
+  - first:
+      213: -1053420671245716637
+    second: LoncatBiasa_12
+  - first:
+      213: 7460455414977802910
+    second: LoncatBiasa_13
+  - first:
+      213: 2044515246260636737
+    second: LoncatBiasa_14
+  - first:
+      213: 4831950744756401766
+    second: LoncatBiasa_15
+  - first:
+      213: -1673909204068712670
+    second: LoncatBiasa_16
+  - first:
+      213: 627060835262479435
+    second: LoncatBiasa_17
+  - first:
+      213: 5410345062157286884
+    second: LoncatBiasa_18
+  - first:
+      213: 5874286073621801347
+    second: LoncatBiasa_19
+  - first:
+      213: -1901651390084213553
+    second: LoncatBiasa_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 45
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LoncatBiasa_1
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 0
+        width: 387
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cededf305e6907bb0800000000000000
+      internalID: -4940282880866783764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoncatBiasa_4
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 0
+        width: 441
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349809b1eece65720800000000000000
+      internalID: 2834713522885134659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoncatBiasa_7
+      rect:
+        serializedVersion: 2
+        x: 2127
+        y: 0
+        width: 315
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb3f04e201f8fbc0800000000000000
+      internalID: -3748981695067505724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoncatBiasa_10
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 0
+        width: 327
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0297bdd337a8a10800000000000000
+      internalID: 1912467701284544741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoncatBiasa_12
+      rect:
+        serializedVersion: 2
+        x: 3865
+        y: 0
+        width: 330
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36378531b7f7161f0800000000000000
+      internalID: -1053420671245716637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoncatBiasa_15
+      rect:
+        serializedVersion: 2
+        x: 4909
+        y: 0
+        width: 357
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666b3610a998e0340800000000000000
+      internalID: 4831950744756401766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoncatBiasa_17
+      rect:
+        serializedVersion: 2
+        x: 5809
+        y: 0
+        width: 315
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c3162e184c3b800800000000000000
+      internalID: 627060835262479435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LoncatBiasa_20
+      rect:
+        serializedVersion: 2
+        x: 6715
+        y: 0
+        width: 315
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc41767d22afb95e0800000000000000
+      internalID: -1901651390084213553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
