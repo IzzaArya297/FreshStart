@@ -3828,11 +3828,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &890112224 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 430029302375112368, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-  m_PrefabInstance: {fileID: 8197257806115284131}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1184689724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8197257807281539743, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
@@ -3899,9 +3894,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af02125e604221e49814bf6fc508d07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallHome: {fileID: 0}
   kabelDiperlukan: 2
-  kabelTerhubung: 0
+  wall: {fileID: 0}
 --- !u!4 &1921631320
 Transform:
   m_ObjectHideFlags: 0
@@ -4102,10 +4096,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 679214757}
     m_Modifications:
-    - target: {fileID: 3060952418001390888, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6151650095096494090, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
       propertyPath: player
       value: 
@@ -4158,46 +4148,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8193132594558990725, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
-      propertyPath: electrocuteRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193132594558990725, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
-      propertyPath: timeEmit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193132594783594185, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
-      propertyPath: electrocuteRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193132594783594185, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
-      propertyPath: timeEmit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193132594838752213, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
-      propertyPath: electrocuteRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193132594838752213, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
-      propertyPath: timeEmit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193132595127180142, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
-      propertyPath: electrocuteRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193132595127180142, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
-      propertyPath: timeEmit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193132596545438513, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
-      propertyPath: electrocuteRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193132596545438513, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
-      propertyPath: timeEmit
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
 --- !u!1001 &8197257806115284131
@@ -4207,58 +4157,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 679214757}
     m_Modifications:
-    - target: {fileID: 1073897000413839192, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2862268816849848672, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137936867499637124, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: electrocuteRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137936867499637124, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: timeEmit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137936867836448249, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: electrocuteRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137936867836448249, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: timeEmit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137936868037529050, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: electrocuteRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137936868037529050, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: timeEmit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137936868037529050, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: electrocute
-      value: 
-      objectReference: {fileID: 890112224}
-    - target: {fileID: 6137936868628785438, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: electrocuteRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137936868628785438, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: timeEmit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137936868674737914, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: electrocuteRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137936868674737914, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
-      propertyPath: timeEmit
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8197257807281539736, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
       propertyPath: m_Name
       value: InputA uninstall

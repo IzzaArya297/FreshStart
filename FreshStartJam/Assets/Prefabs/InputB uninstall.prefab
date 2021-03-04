@@ -389,6 +389,10 @@ PrefabInstance:
       propertyPath: index
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2660738445544535331, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
+      propertyPath: electrocuteRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9161937008691143523, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
       propertyPath: m_Name
       value: Obstacle (4)
@@ -458,6 +462,10 @@ PrefabInstance:
     - target: {fileID: 2660738445544535331, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
       propertyPath: index
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660738445544535331, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
+      propertyPath: electrocuteRadius
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9161937008691143523, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
       propertyPath: m_Name
@@ -529,6 +537,10 @@ PrefabInstance:
       propertyPath: index
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2660738445544535331, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
+      propertyPath: electrocuteRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9161937008691143523, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
       propertyPath: m_Name
       value: Obstacle (1)
@@ -594,6 +606,10 @@ PrefabInstance:
     - target: {fileID: 2660738445544535331, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
       propertyPath: health
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660738445544535331, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
+      propertyPath: electrocuteRadius
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9161937008691143523, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
       propertyPath: m_Name
@@ -665,13 +681,17 @@ PrefabInstance:
       propertyPath: index
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2660738445544535331, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
+      propertyPath: electrocuteRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9161937008691143523, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
       propertyPath: m_Name
       value: Obstacle (2)
       objectReference: {fileID: 0}
     - target: {fileID: 9161937008691143525, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.14
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9161937008691143525, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
       propertyPath: m_LocalPosition.y
