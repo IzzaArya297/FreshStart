@@ -17,7 +17,7 @@ public class LineSource : MonoBehaviour
     [HideInInspector]
     public LineRenderer cable;
 
-    public bool firstObsDestroyed = false, done = false;
+    public bool firstObsDestroyed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +40,6 @@ public class LineSource : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Obstacle.Count <= 0)
-        {
-            done = true;
-        }
     }
 
     public void makeLine()
@@ -53,7 +49,7 @@ public class LineSource : MonoBehaviour
 
         points.Add(source.position);
 
-        Debug.Log("obstacle length : " + Obstacle.ToArray().Length);
+        //Debug.Log("obstacle length : " + Obstacle.ToArray().Length);
         
 
         for (int i = 0; i < Obstacle.Count; i++)
@@ -63,7 +59,7 @@ public class LineSource : MonoBehaviour
 
         }
 
-        Debug.Log("points length : " + points.ToArray().Length);
+        //Debug.Log("points length : " + points.ToArray().Length);
         cable.positionCount = points.Count;
         cable.SetPositions(points.ToArray());
     }
