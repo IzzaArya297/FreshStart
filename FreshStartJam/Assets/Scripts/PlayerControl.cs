@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     public float speed = 8f, distance, jumpForce = 10f, invulTime = 2f;
-    public int health = 2;
     bool lookRight = true;
 
     [HideInInspector]
@@ -27,7 +26,9 @@ public class PlayerControl : MonoBehaviour
     private Animator anim;
     public AnimationClip kesetrum;
 
-    public bool canMove = true, invulnerable;
+    [HideInInspector]
+    public bool canMove = true;
+    bool bisaKena = true, invulnerable, attacking, kena;
     
 
     private void Awake()
@@ -55,14 +56,9 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         PlayerJump(GroundCheck());
-        if(health <= 0)
+        if (Input.GetButtonDown("Fire1") && !attacking && canMove)
         {
-            //matii
-            canMove = false;
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Attack();
+            StartCoroutine(Attack());
         }
     }
 
@@ -130,46 +126,42 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (!invulnerable)
+        if (SceneLoader.sceneLoader.health <= 0 || !bisaKena) return;
+        if (collision.gameObject.CompareTag("Electro"))
         {
-            if (collision.gameObject.tag == "Electro")
-            {
-                Electro electro = collision.GetComponent<Electro>();
-                health--;
-                Vector2 direction = (transform.position - electro.transform.position).normalized;
-                StartCoroutine(duar(direction * electro.pushForce, 1f));
-                StartCoroutine(invulnerability(invulTime));
-                SceneLoader.sceneLoader.ChangeHealth();
-            }
-            if(collision.gameObject.tag == "Obstacle")
-            {
-                Obstacle obstacle = collision.GetComponent<Obstacle>();
-                health--;
-                //Debug.Log("derrrr");
-                Vector2 direction = (transform.position - obstacle.transform.position).normalized;
-                StartCoroutine(duar(direction * obstacle.pushForce, 0.25f));
-                StartCoroutine(invulnerability(invulTime - invulTime + 0.1f));
-                SceneLoader.sceneLoader.ChangeHealth();
-            }
-
-            if(collision.gameObject.tag == "Electrocute")
-            {
-                Obstacle obstacle = collision.GetComponentInParent<Obstacle>();
-                health--;
-                //Debug.Log("derrrr");
-                Vector2 direction = (transform.position - obstacle.transform.position).normalized;
-                StartCoroutine(duar(direction * obstacle.pushForce, 0.25f));
-                StartCoroutine(invulnerability(invulTime));
-                SceneLoader.sceneLoader.ChangeHealth();
-            }
+            if (!invulnerable)
+                StartCoroutine(SceneLoader.sceneLoader.ChangeHealth());
+            kena = true;
+            Electro electro = collision.GetComponent<Electro>();
+            Vector2 direction = (transform.position - electro.transform.position).normalized;
+            StartCoroutine(duar(direction * electro.pushForce, 1f, 1f));
+        }
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            if (!invulnerable)
+                StartCoroutine(SceneLoader.sceneLoader.ChangeHealth());
             
+            kena = true;
+            Obstacle obstacle = collision.GetComponent<Obstacle>();
+            Vector2 direction = (transform.position - obstacle.transform.position).normalized;
+            StartCoroutine(duar(direction * obstacle.pushForce, 0.5f, 0.5f));
         }
 
+        else if (collision.gameObject.CompareTag("Electrocute"))
+        {
+            if (!invulnerable)
+                StartCoroutine(SceneLoader.sceneLoader.ChangeHealth());
+            kena = true;
+            Obstacle obstacle = collision.GetComponentInParent<Obstacle>();
+            Vector2 direction = (transform.position - obstacle.transform.position).normalized;
+            StartCoroutine(duar(direction * obstacle.pushForce, 0.5f, 0.5f));
+        }
     }
 
-    void Attack()
+    IEnumerator Attack()
     {
+        attacking = true;
+        anim.SetTrigger("Attack");
         Collider2D[] destroyables = Physics2D.OverlapCircleAll(weapon.transform.position, atkRadius, obsLayer);
 
         foreach(Collider2D obs in destroyables)
@@ -178,22 +170,40 @@ public class PlayerControl : MonoBehaviour
             Obstacle obstacle = obs.gameObject.GetComponent<Obstacle>();
             obstacle.takeDamage();
         }
-        
-        
+        yield return new WaitForSeconds(0.5f);
+        attacking = false;
     }
 
     IEnumerator invulnerability(float invulTime)
     {
-        invulnerable = true;
+        anim.SetBool("Invul", true);
         yield return new WaitForSeconds(invulTime);
         invulnerable = false;
+        bisaKena = true;
+        anim.SetBool("Invul", false);
     }
 
-    IEnumerator duar(Vector2 force, float stunned)
+    IEnumerator duar(Vector2 force, float stunTime,float invulTime)
     {
-        canMove = false;
+        invulnerable = true;
+        anim.SetBool("Invul", false);
+
+        anim.SetBool("Kesetrum", true);
+        canMove = kena = false;
+        if(SceneLoader.sceneLoader.health <= 0)
+        {
+            yield return new WaitForSeconds(stunTime);
+            anim.SetBool("Kesetrum", false);
+            anim.SetTrigger("Mati");
+            canMove = bisaKena = false;
+            yield break;
+        }
         rb.AddForce(force);
-        yield return new WaitForSeconds(stunned);
+        yield return new WaitForSeconds(stunTime);
+        if (kena) yield break;
         canMove = true;
+        anim.SetBool("Kesetrum", false);
+        bisaKena = false;
+        StartCoroutine(invulnerability(invulTime));
     }
 }

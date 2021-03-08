@@ -12,7 +12,8 @@ public class SceneLoader : MonoBehaviour
 
     public Animator anim;
 
-    private int health;
+    [HideInInspector]
+    public int health;
 
     // Start is called before the first frame update
     void Start()
@@ -68,11 +69,14 @@ public class SceneLoader : MonoBehaviour
         ChangeScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void ChangeHealth()
+    public IEnumerator ChangeHealth()
     {
         health--;
         healthImage[health].SetActive(false);
         if (health == 0)
-            GameManager.gameManager.GameOver();
+        {
+            yield return new WaitForSeconds(2f);
+            RetryLevel();
+        }
     }
 }

@@ -83,7 +83,7 @@ public class MenuManager : MonoBehaviour
         {
             Debug.Log(PlayerPrefs.HasKey(levelInstallButton[i].gameObject.name));
             if (!PlayerPrefs.HasKey(levelInstallButton[i].gameObject.name))
-                break;
+                continue;
             ColorBlock colors = levelInstallButton[i].colors;
             Color temp = colors.normalColor;
             temp.a = 0.5f;
@@ -93,7 +93,7 @@ public class MenuManager : MonoBehaviour
         for (int i = 0; i < levelUninstallButton.Length; i++)
         {
             if (!PlayerPrefs.HasKey(levelUninstallButton[i].gameObject.name))
-                break;
+                continue;
             ColorBlock colors = levelUninstallButton[i].colors;
             Color temp = colors.normalColor;
             temp.a = 0.5f;

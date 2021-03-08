@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  pushForce: 450
+  pushForce: 350
   inputPath: {fileID: 0}
   electrocute: {fileID: 8373678058776651337}
   electrocuteRadius: 1.5

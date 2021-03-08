@@ -19,17 +19,17 @@ public class OutputSource : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(inputType.inputCondition == Condition.Connected)
+        if (inputType != null)
         {
 
-        }
-        if(inputType.lineCreated && fastMode)
-        {
-            inputType.CancelInvoke("SpawnElectro");
-            inputType.normalize();
-            inputType.player.canMove = true;
-            fastMode = false;
-            inputType.InvokeRepeating("SpawnElectro", 1 / inputType.deltaSpawnElectro, 1 / inputType.deltaSpawnElectro);
+            if (inputType.lineCreated && fastMode)
+            {
+                inputType.CancelInvoke("SpawnElectro");
+                inputType.normalize();
+                inputType.player.canMove = true;
+                fastMode = false;
+                inputType.InvokeRepeating("SpawnElectro", 1 / inputType.deltaSpawnElectro, 1 / inputType.deltaSpawnElectro);
+            }
         }
     }
 
@@ -53,7 +53,7 @@ public class OutputSource : MonoBehaviour
                 inputType.InvokeRepeating("SpawnElectro", 1 / inputType.deltaSpawnElectro, 1/inputType.deltaSpawnElectro);
                 collision.gameObject.GetComponent<PlayerControl>().currentInput = null;
                 if (--GameManager.gameManager.kabelDiperlukan == 0)
-                    GameManager.gameManager.OpenWall();
+                    GameManager.gameManager.openWall = true;
             }
             collision.gameObject.layer = 11;
         }
