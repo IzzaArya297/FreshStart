@@ -24,11 +24,12 @@ public class PlayerControl : MonoBehaviour
     public AudioClip jumpSound;
 
     private Animator anim;
-    public AnimationClip kesetrum;
 
     [HideInInspector]
     public bool canMove = true;
     bool bisaKena = true, invulnerable, attacking, kena;
+
+    public AudioClip jump, kesetrum;
     
 
     private void Awake()
@@ -58,6 +59,7 @@ public class PlayerControl : MonoBehaviour
         PlayerJump(GroundCheck());
         if (Input.GetButtonDown("Fire1") && !attacking && canMove)
         {
+            //AudioManager.audioManager.PlaySound(attack);
             StartCoroutine(Attack());
         }
     }
@@ -70,7 +72,7 @@ public class PlayerControl : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, jumpForce));
             anim.SetTrigger("Loncat");
-            //audioSource.PlayOneShot(jumpSound);
+            AudioManager.audioManager.PlaySound(jump);
         }
     }
 
@@ -170,7 +172,7 @@ public class PlayerControl : MonoBehaviour
             Obstacle obstacle = obs.gameObject.GetComponent<Obstacle>();
             obstacle.takeDamage();
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.33f);
         attacking = false;
     }
 
@@ -189,6 +191,7 @@ public class PlayerControl : MonoBehaviour
         anim.SetBool("Invul", false);
 
         anim.SetBool("Kesetrum", true);
+        AudioManager.audioManager.PlaySound(kesetrum);
         canMove = kena = false;
         if(SceneLoader.sceneLoader.health <= 0)
         {

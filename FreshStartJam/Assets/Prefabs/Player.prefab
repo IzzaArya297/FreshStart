@@ -351,7 +351,7 @@ MonoBehaviour:
   boxCollider: {fileID: 544094427}
   currentInput: {fileID: 0}
   weapon: {fileID: 2131515410}
-  atkRadius: 0.7
+  atkRadius: 0.75
   obsLayer:
     serializedVersion: 2
     m_Bits: 1024

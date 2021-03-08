@@ -16,6 +16,8 @@ public class Obstacle : MonoBehaviour
     
     public int index;
 
+    public AudioClip tangSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,15 +34,12 @@ public class Obstacle : MonoBehaviour
     }
     public void takeDamage()
     {
-
-        //Debug.Log("index : " + index);
-        //Debug.Log("points length : " + inputPath.points.Count);
-
         if (!inputPath.firstObsDestroyed)
         {
             if (inputPath.points.Count - 3 == index)
             {
                 health--;
+                AudioManager.audioManager.PlaySound(tangSound);
             }
         }
         else
@@ -48,7 +47,7 @@ public class Obstacle : MonoBehaviour
             if (inputPath.points.Count - 2 == index)
             {
                 health--;
-                //Debug.Log("Take Damage ");
+                AudioManager.audioManager.PlaySound(tangSound);
             }
         }
 
@@ -59,10 +58,12 @@ public class Obstacle : MonoBehaviour
                 Destroyed(index + 1);
                 Destroyed(index);
                 inputPath.firstObsDestroyed = true;
+                AudioManager.audioManager.PlaySound(tangSound);
             }
             else
             {
                 Destroyed(index);
+                AudioManager.audioManager.PlaySound(tangSound);
             }
         }
     }
@@ -79,12 +80,9 @@ public class Obstacle : MonoBehaviour
     IEnumerator electrocuting()
     {
         emiting = true;
-        //Debug.Log("WaitForIt!");
         yield return new WaitForSeconds(timeEmit);
-        //Debug.Log("Duerrrrr!");
         electrocute.transform.localScale = Vector3.one * electrocuteRadius;
         yield return new WaitForSeconds(2f);
-        //Debug.Log("Duerrrrr done!");
         electrocute.transform.localScale = Vector3.one * 0.001f;
         emiting = false;
     }
