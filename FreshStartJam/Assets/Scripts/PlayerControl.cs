@@ -69,7 +69,11 @@ public class PlayerControl : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, jumpForce));
             anim.SetTrigger("Loncat");
+<<<<<<< HEAD
             SceneLoader.sceneLoader.PlaySound(jump);
+=======
+            AudioManager.audioManager.PlaySound(jump);
+>>>>>>> parent of 3d9628f (ayayayayayay)
         }
     }
 
@@ -188,7 +192,11 @@ public class PlayerControl : MonoBehaviour
         anim.SetBool("Invul", false);
 
         anim.SetBool("Kesetrum", true);
+<<<<<<< HEAD
         SceneLoader.sceneLoader.PlaySound(kesetrum);
+=======
+        AudioManager.audioManager.PlaySound(kesetrum);
+>>>>>>> parent of 3d9628f (ayayayayayay)
         canMove = kena = false;
         if(SceneLoader.sceneLoader.health <= 0)
         {

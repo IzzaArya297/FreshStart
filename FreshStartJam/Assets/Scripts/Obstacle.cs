@@ -39,7 +39,11 @@ public class Obstacle : MonoBehaviour
             if (inputPath.points.Count - 3 == index)
             {
                 health--;
+<<<<<<< HEAD
                 SceneLoader.sceneLoader.PlaySound(tangSound);
+=======
+                AudioManager.audioManager.PlaySound(tangSound);
+>>>>>>> parent of 3d9628f (ayayayayayay)
             }
         }
         else
@@ -47,7 +51,11 @@ public class Obstacle : MonoBehaviour
             if (inputPath.points.Count - 2 == index)
             {
                 health--;
+<<<<<<< HEAD
                 SceneLoader.sceneLoader.PlaySound(tangSound);
+=======
+                AudioManager.audioManager.PlaySound(tangSound);
+>>>>>>> parent of 3d9628f (ayayayayayay)
             }
         }
 
@@ -58,12 +66,20 @@ public class Obstacle : MonoBehaviour
                 Destroyed(index + 1);
                 Destroyed(index);
                 inputPath.firstObsDestroyed = true;
+<<<<<<< HEAD
                 SceneLoader.sceneLoader.PlaySound(tangSound);
+=======
+                AudioManager.audioManager.PlaySound(tangSound);
+>>>>>>> parent of 3d9628f (ayayayayayay)
             }
             else
             {
                 Destroyed(index);
+<<<<<<< HEAD
                 SceneLoader.sceneLoader.PlaySound(tangSound);
+=======
+                AudioManager.audioManager.PlaySound(tangSound);
+>>>>>>> parent of 3d9628f (ayayayayayay)
             }
         }
     }
