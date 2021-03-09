@@ -1035,18 +1035,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kabelDiperlukan: 2
-<<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level4a.unity
-<<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level4a.unity
   lerpDuration: 3
   wall: {fileID: 34571797}
   endValue: -10.72
   openWall: 0
-=======
-  wall: {fileID: 34571795}
->>>>>>> parent of 3d9628f (ayayayayayay):FreshStartJam/Assets/Scenes/Level 2 Uninstall.unity
-=======
-  wall: {fileID: 34571795}
->>>>>>> parent of 3d9628f (ayayayayayay):FreshStartJam/Assets/Scenes/Level 2 Uninstall.unity
 --- !u!4 &1016886316
 Transform:
   m_ObjectHideFlags: 0

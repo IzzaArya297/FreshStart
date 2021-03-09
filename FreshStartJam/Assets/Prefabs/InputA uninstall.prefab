@@ -373,14 +373,6 @@ MonoBehaviour:
   points: []
   cable: {fileID: 0}
   firstObsDestroyed: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  done: 0
->>>>>>> parent of 3d9628f (ayayayayayay)
-=======
-  done: 0
->>>>>>> parent of 3d9628f (ayayayayayay)
 --- !u!1001 &8197257805443998681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -618,19 +610,6 @@ PrefabInstance:
       propertyPath: index
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 3d9628f (ayayayayayay)
-    - target: {fileID: 2660738445544535331, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
-      propertyPath: electrocuteRadius
-      value: 5
-      objectReference: {fileID: 0}
-<<<<<<< HEAD
->>>>>>> parent of 3d9628f (ayayayayayay)
-=======
->>>>>>> parent of 3d9628f (ayayayayayay)
     - target: {fileID: 9161937008691143523, guid: 5ff3d416c99b0924fb89e5c0a5b4dbbd, type: 3}
       propertyPath: m_Name
       value: Obstacle
