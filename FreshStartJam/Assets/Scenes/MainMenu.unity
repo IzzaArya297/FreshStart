@@ -1784,7 +1784,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '   Install Linrar'
+  m_Text: '   Uninnstall Linrar'
 --- !u!222 &395987758
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2365,7 +2365,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '   Install Ngab'
+  m_Text: '   Uninnstall Ngab'
 --- !u!222 &720029276
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3371,7 +3371,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '   Install SmardAF'
+  m_Text: '   Uninnstall SmardAF'
 --- !u!222 &1116328729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4609,7 +4609,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '   Install Virtual Studio Code'
+  m_Text: '   Uninnstall Virtual Studio Code'
 --- !u!222 &1633574585
 CanvasRenderer:
   m_ObjectHideFlags: 0
