@@ -72,7 +72,7 @@ public class PlayerControl : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, jumpForce));
             anim.SetTrigger("Loncat");
-            AudioManager.audioManager.PlaySound(jump);
+            //AudioManager.audioManager.PlaySound(jump);
         }
     }
 
@@ -191,7 +191,7 @@ public class PlayerControl : MonoBehaviour
         anim.SetBool("Invul", false);
 
         anim.SetBool("Kesetrum", true);
-        AudioManager.audioManager.PlaySound(kesetrum);
+        //AudioManager.audioManager.PlaySound(kesetrum);
         canMove = kena = false;
         if(SceneLoader.sceneLoader.health <= 0)
         {

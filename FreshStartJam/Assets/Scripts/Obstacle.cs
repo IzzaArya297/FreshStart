@@ -21,7 +21,7 @@ public class Obstacle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inputPath = this.transform.parent.gameObject.GetComponentInParent<LineSource>();
+        //inputPath = this.transform.parent.gameObject.GetComponentInParent<LineSource>();
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class Obstacle : MonoBehaviour
             if (inputPath.points.Count - 3 == index)
             {
                 health--;
-                AudioManager.audioManager.PlaySound(tangSound);
+                //AudioManager.audioManager.PlaySound(tangSound);
             }
         }
         else
@@ -47,7 +47,7 @@ public class Obstacle : MonoBehaviour
             if (inputPath.points.Count - 2 == index)
             {
                 health--;
-                AudioManager.audioManager.PlaySound(tangSound);
+                //AudioManager.audioManager.PlaySound(tangSound);
             }
         }
 
@@ -58,12 +58,12 @@ public class Obstacle : MonoBehaviour
                 Destroyed(index + 1);
                 Destroyed(index);
                 inputPath.firstObsDestroyed = true;
-                AudioManager.audioManager.PlaySound(tangSound);
+                //AudioManager.audioManager.PlaySound(tangSound);
             }
             else
             {
                 Destroyed(index);
-                AudioManager.audioManager.PlaySound(tangSound);
+                //AudioManager.audioManager.PlaySound(tangSound);
             }
         }
     }
