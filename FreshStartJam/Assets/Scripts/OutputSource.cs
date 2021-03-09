@@ -10,6 +10,8 @@ public class OutputSource : MonoBehaviour
 
     bool fastMode = true;
 
+    public MultipleInputSource multInput;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,14 +52,17 @@ public class OutputSource : MonoBehaviour
                 inputType.cable.SetPositions(inputType.points.ToArray());
                 inputType.inputCondition = Condition.Connected;
                 //Spawn electro sebanyak deltaSpawnElectro perdetik
-                inputType.InvokeRepeating("SpawnElectro", 1 / inputType.deltaSpawnElectro, 1/inputType.deltaSpawnElectro);
+                inputType.InvokeRepeating("SpawnElectro", 1 / inputType.deltaSpawnElectro, 1 / inputType.deltaSpawnElectro);
                 collision.gameObject.GetComponent<PlayerControl>().currentInput = null;
                 SceneLoader.sceneLoader.lengthLeft.text = "";
+                if (multInput != null)
+                    multInput.enable(multInput.currentInput);
                 if (--GameManager.gameManager.kabelDiperlukan == 0)
                     GameManager.gameManager.openWall = true;
             }
             collision.gameObject.layer = 11;
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
