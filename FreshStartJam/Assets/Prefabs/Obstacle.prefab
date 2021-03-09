@@ -174,7 +174,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 75a5c82ea77cb094da971e353358aabb, type: 3}
-  m_Color: {r: 1, g: 0.47058338, b: 0.34509802, a: 1}
+  m_Color: {r: 1, g: 0.19161674, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -219,3 +219,5 @@ MonoBehaviour:
   electrocuteRadius: 1.5
   timeEmit: 5
   index: 0
+  tangSound: {fileID: 8300000, guid: 6c8de2cf14c7a6f4f81fa072ec2baba7, type: 3}
+  destroy: {fileID: 8300000, guid: 8403204c7d0e5d149ae08eb300e7ed7a, type: 3}

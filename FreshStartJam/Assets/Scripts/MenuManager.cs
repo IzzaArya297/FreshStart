@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
 
     public Button[] levelInstallButton, levelUninstallButton;
     bool installOpened = true;
+    public AudioClip error;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class MenuManager : MonoBehaviour
         {
             Debug.Log("double click");
             errorPanel.SetActive(true);
+            SceneLoader.sceneLoader.PlaySound(error);
         }
         timerdclick = Time.time;
     }
@@ -81,7 +83,6 @@ public class MenuManager : MonoBehaviour
     {
         for(int i = 0; i < levelInstallButton.Length; i++)
         {
-            Debug.Log(PlayerPrefs.HasKey(levelInstallButton[i].gameObject.name));
             if (!PlayerPrefs.HasKey(levelInstallButton[i].gameObject.name))
                 continue;
             ColorBlock colors = levelInstallButton[i].colors;

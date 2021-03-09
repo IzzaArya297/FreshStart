@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.name);
         if (!other.CompareTag("Player")) return;
         PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 1);
         SceneLoader.sceneLoader.ChangeScene(0);

@@ -56,7 +56,6 @@ public class InputSource : MonoBehaviour
         if (inputCondition == Condition.Taken)
             cable.SetPosition(1, player.transform.position);
         else if (inputCondition == Condition.Bought)
-
             drawLine();
         //else if (inputCondition == Condition.Connected)
         //    StartCoroutine(SpawnElectro());
@@ -96,6 +95,8 @@ public class InputSource : MonoBehaviour
         cable.SetPosition(1, source.position);
         points.Add(source.position);
         points.Add(source.position);
+        player.currentInput = null;
+        SceneLoader.sceneLoader.lengthLeft.text = "";
     }
 
     void drawLine()
@@ -111,6 +112,7 @@ public class InputSource : MonoBehaviour
             points.Add(player.transform.position);
             cable.positionCount = points.Count;
             cable.SetPositions(points.ToArray());
+            SceneLoader.sceneLoader.lengthLeft.text = "Length = " + (maxLine - points.Count);
         }
     }
 
@@ -143,30 +145,4 @@ public class InputSource : MonoBehaviour
         setElectroRate();
         
     }
-    /*
-    void makeStartLine()
-    {
-        //List<Vector3> pos = new List<Vector3>();
-        points.Add(source.position);
-        int i = 0;
-        foreach (Transform child in startingPoints.transform)
-        {
-            points.Add(child.position);
-            child.gameObject.GetComponent<Obstacle>().index = i + 2;
-            i++;
-        }
-        cable.positionCount += points.Count() - 2;
-        cable.SetPositions(points.ToArray());
-
-    }
-
-    public void deleteObs(int i)
-    {
-        
-        points.RemoveAt(i);
-        cable.positionCount--;
-        cable.SetPositions(points.ToArray());
-
-    }
-    */
 }

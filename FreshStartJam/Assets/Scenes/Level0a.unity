@@ -724,6 +724,10 @@ PrefabInstance:
       propertyPath: electrocuteRadius
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6137936868037529050, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
+      propertyPath: tangSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c8de2cf14c7a6f4f81fa072ec2baba7, type: 3}
     - target: {fileID: 6137936868628785438, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
       propertyPath: electrocuteRadius
       value: 5

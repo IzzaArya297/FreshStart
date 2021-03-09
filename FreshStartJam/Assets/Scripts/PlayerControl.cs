@@ -20,9 +20,6 @@ public class PlayerControl : MonoBehaviour
     public float atkRadius;
     public LayerMask obsLayer;
 
-    //private AudioSource audioSource;
-    public AudioClip jumpSound;
-
     private Animator anim;
 
     [HideInInspector]
@@ -72,7 +69,7 @@ public class PlayerControl : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, jumpForce));
             anim.SetTrigger("Loncat");
-            AudioManager.audioManager.PlaySound(jump);
+            SceneLoader.sceneLoader.PlaySound(jump);
         }
     }
 
@@ -191,7 +188,7 @@ public class PlayerControl : MonoBehaviour
         anim.SetBool("Invul", false);
 
         anim.SetBool("Kesetrum", true);
-        AudioManager.audioManager.PlaySound(kesetrum);
+        SceneLoader.sceneLoader.PlaySound(kesetrum);
         canMove = kena = false;
         if(SceneLoader.sceneLoader.health <= 0)
         {

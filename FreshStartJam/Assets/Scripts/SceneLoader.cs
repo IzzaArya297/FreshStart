@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
@@ -11,10 +12,10 @@ public class SceneLoader : MonoBehaviour
     public GameObject[] healthImage;
 
     public Animator anim;
-
+    public AudioSource mainMenu, sfx;
     [HideInInspector]
     public int health;
-
+    public Text lengthLeft;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,9 +52,17 @@ public class SceneLoader : MonoBehaviour
             healthImage[0].SetActive(true);
             healthImage[1].SetActive(true);
             GUI.SetActive(true);
+            if(index != SceneManager.GetActiveScene().buildIndex)
+            {
+                GetComponent<AudioSource>().enabled = true;
+                GetComponent<AudioSource>().Play();
+            }
         }
         else
+        {
+            GetComponent<AudioSource>().enabled = false;
             GUI.SetActive(false);
+        }
         anim.Play("FadeOut");
         yield return new WaitForSeconds(0.9f);
         panel.SetActive(false);
@@ -67,6 +76,7 @@ public class SceneLoader : MonoBehaviour
     public void RetryLevel()
     {
         ChangeScene(SceneManager.GetActiveScene().buildIndex);
+        lengthLeft.text = "";
     }
 
     public IEnumerator ChangeHealth()
@@ -78,5 +88,10 @@ public class SceneLoader : MonoBehaviour
             yield return new WaitForSeconds(2f);
             RetryLevel();
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        sfx.PlayOneShot(clip);
     }
 }

@@ -351,13 +351,13 @@ MonoBehaviour:
   boxCollider: {fileID: 544094427}
   currentInput: {fileID: 0}
   weapon: {fileID: 2131515410}
-  atkRadius: 0.75
+  atkRadius: 0.65
   obsLayer:
     serializedVersion: 2
     m_Bits: 1024
-  jumpSound: {fileID: 0}
-  kesetrum: {fileID: 0}
   canMove: 1
+  jump: {fileID: 8300000, guid: 177c475d1539e2f44b7d77149b552176, type: 3}
+  kesetrum: {fileID: 8300000, guid: 2fd51b0c075d9204f8b2f5c8194eebbc, type: 3}
 --- !u!61 &544094427
 BoxCollider2D:
   m_ObjectHideFlags: 0
