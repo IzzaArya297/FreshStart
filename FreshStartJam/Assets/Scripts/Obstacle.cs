@@ -81,11 +81,17 @@ public class Obstacle : MonoBehaviour
     IEnumerator electrocuting()
     {
         emiting = true;
+        Invoke("Kedip", 3.5f);
         yield return new WaitForSeconds(timeEmit);
         electrocute.transform.localScale = Vector3.one * electrocuteRadius;
+        GetComponent<Animator>().SetTrigger("Idle");
         yield return new WaitForSeconds(2f);
         electrocute.transform.localScale = Vector3.one * 0.001f;
         emiting = false;
     }
 
+    void Kedip()
+    {
+        GetComponent<Animator>().Play("Electrocute");
+    }
 }

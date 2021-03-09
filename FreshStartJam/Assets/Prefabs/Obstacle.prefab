@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 9161937008691143524}
   - component: {fileID: 2095316157}
   - component: {fileID: 2660738445544535331}
+  - component: {fileID: 7671430440006487419}
   m_Layer: 10
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -216,8 +217,27 @@ MonoBehaviour:
   pushForce: 350
   inputPath: {fileID: 0}
   electrocute: {fileID: 8373678058776651337}
-  electrocuteRadius: 1.5
+  electrocuteRadius: 5
   timeEmit: 5
   index: 0
   tangSound: {fileID: 8300000, guid: 6c8de2cf14c7a6f4f81fa072ec2baba7, type: 3}
   destroy: {fileID: 8300000, guid: 8403204c7d0e5d149ae08eb300e7ed7a, type: 3}
+--- !u!95 &7671430440006487419
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9161937008691143523}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 89f532f77aa3c9646a8df098cbcf2ab9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -186,6 +186,10 @@ PrefabInstance:
       propertyPath: electrocuteRadius
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8197257805350267851, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.048999757
+      objectReference: {fileID: 0}
     - target: {fileID: 8197257807281539736, guid: 596533ae6dbc5324eb378b433b3c00ea, type: 3}
       propertyPath: m_Name
       value: InputA uninstall
@@ -331,6 +335,10 @@ PrefabInstance:
     - target: {fileID: 6151650095096494327, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151650095468047785, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.049
       objectReference: {fileID: 0}
     - target: {fileID: 8193132594558990725, guid: e49153191b277e549b3b993ba4eb1ace, type: 3}
       propertyPath: electrocuteRadius
