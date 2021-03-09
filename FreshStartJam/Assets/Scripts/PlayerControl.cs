@@ -70,7 +70,11 @@ public class PlayerControl : MonoBehaviour
             rb.AddForce(new Vector2(0f, jumpForce));
             anim.SetTrigger("Loncat");
 <<<<<<< HEAD
+<<<<<<< HEAD
             SceneLoader.sceneLoader.PlaySound(jump);
+=======
+            AudioManager.audioManager.PlaySound(jump);
+>>>>>>> parent of 3d9628f (ayayayayayay)
 =======
             AudioManager.audioManager.PlaySound(jump);
 >>>>>>> parent of 3d9628f (ayayayayayay)
@@ -193,7 +197,11 @@ public class PlayerControl : MonoBehaviour
 
         anim.SetBool("Kesetrum", true);
 <<<<<<< HEAD
+<<<<<<< HEAD
         SceneLoader.sceneLoader.PlaySound(kesetrum);
+=======
+        AudioManager.audioManager.PlaySound(kesetrum);
+>>>>>>> parent of 3d9628f (ayayayayayay)
 =======
         AudioManager.audioManager.PlaySound(kesetrum);
 >>>>>>> parent of 3d9628f (ayayayayayay)

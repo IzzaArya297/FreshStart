@@ -579,10 +579,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kabelDiperlukan: 2
 <<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level5.unity
+<<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level5.unity
   lerpDuration: 3
   wall: {fileID: 34571797}
   endValue: -11
   openWall: 0
+=======
+  wall: {fileID: 34571795}
+>>>>>>> parent of 3d9628f (ayayayayayay):FreshStartJam/Assets/Scenes/Level 3.unity
 =======
   wall: {fileID: 34571795}
 >>>>>>> parent of 3d9628f (ayayayayayay):FreshStartJam/Assets/Scenes/Level 3.unity
@@ -3736,6 +3740,8 @@ CompositeCollider2D:
         Y: 10000100
     - - X: 75000000
 <<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level5.unity
+<<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level5.unity
+=======
 =======
         Y: 5000000
       - X: 75000000
@@ -3756,11 +3762,25 @@ CompositeCollider2D:
       - X: -24960938
         Y: 5000000
     - - X: 70000000
+>>>>>>> parent of 3d9628f (ayayayayayay):FreshStartJam/Assets/Scenes/Level 3.unity
         Y: 5000000
       - X: 70000000
         Y: 5039062
       - X: 70039064
         Y: 5000000
+    - - X: -25000000
+        Y: 5000000
+      - X: -25000000
+        Y: 5039062
+      - X: -24960938
+        Y: 5000000
+    - - X: -15000000
+        Y: 5000000
+      - X: -15000000
+        Y: 5039062
+      - X: -14960938
+        Y: 5000000
+<<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level5.unity
     - - X: -25000000
         Y: 5000000
       - X: -25000000
@@ -3781,6 +3801,10 @@ CompositeCollider2D:
         Y: 5000000
     - - X: -10000000
         Y: 5000000
+=======
+    - - X: -10000000
+        Y: 5000000
+>>>>>>> parent of 3d9628f (ayayayayayay):FreshStartJam/Assets/Scenes/Level 3.unity
       - X: -10000000
         Y: 5039062
       - X: -9960938
@@ -4014,6 +4038,7 @@ CompositeCollider2D:
       - X: 60039064
         Y: -15000000
     - - X: -10000000
+<<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level5.unity
         Y: -15000000
       - X: -10000000
         Y: -14960938
@@ -4076,6 +4101,19 @@ CompositeCollider2D:
 =======
 >>>>>>> parent of 3d9628f (ayayayayayay):FreshStartJam/Assets/Scenes/Level 3.unity
         Y: -15000000
+=======
+        Y: -15000000
+      - X: -10000000
+        Y: -14960938
+      - X: -9960938
+        Y: -15000000
+    - - X: -25000000
+        Y: -15000000
+      - X: -25000000
+        Y: -14960938
+      - X: -24960938
+        Y: -15000000
+>>>>>>> parent of 3d9628f (ayayayayayay):FreshStartJam/Assets/Scenes/Level 3.unity
     - - X: 75000000
         Y: -15000000
       - X: 75000000
@@ -4127,8 +4165,23 @@ CompositeCollider2D:
     - - X: 75000000
         Y: -20000000
       - X: 75000000
+<<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level5.unity
         Y: -19960938
       - X: 75039064
+        Y: -20000000
+    - - X: 80000000
+        Y: -20000000
+      - X: 80000000
+        Y: -19960938
+      - X: 80039064
+        Y: -20000000
+    - - X: -75000000
+        Y: -20000000
+      - X: -75000000
+=======
+>>>>>>> parent of 3d9628f (ayayayayayay):FreshStartJam/Assets/Scenes/Level 3.unity
+        Y: -19960938
+      - X: -74960936
         Y: -20000000
     - - X: 80000000
         Y: -20000000
@@ -4314,6 +4367,9 @@ CompositeCollider2D:
         Y: -24999900
       - X: 115000000
 <<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level5.unity
+<<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level5.unity
+=======
+>>>>>>> parent of 3d9628f (ayayayayayay):FreshStartJam/Assets/Scenes/Level 3.unity
         Y: -24960938
       - X: 115038964
         Y: -24999900
@@ -4333,6 +4389,7 @@ CompositeCollider2D:
         Y: -24999900
       - X: 75000000
         Y: -24960938
+<<<<<<< HEAD:FreshStartJam/Assets/Scenes/Level5.unity
 =======
         Y: -24960938
       - X: 115038964
@@ -4368,6 +4425,22 @@ CompositeCollider2D:
         Y: -24961080
       - X: 120038822
         Y: -24999900
+=======
+      - X: 75038964
+        Y: -24999900
+    - - X: 65000000
+        Y: -24999900
+      - X: 65000000
+        Y: -24960938
+      - X: 65038964
+        Y: -24999900
+    - - X: 120000000
+        Y: -24999900
+      - X: 120000000
+        Y: -24961080
+      - X: 120038822
+        Y: -24999900
+>>>>>>> parent of 3d9628f (ayayayayayay):FreshStartJam/Assets/Scenes/Level 3.unity
     - - X: 125000100
         Y: -24999900
       - X: 125000100

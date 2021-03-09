@@ -40,7 +40,11 @@ public class Obstacle : MonoBehaviour
             {
                 health--;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 SceneLoader.sceneLoader.PlaySound(tangSound);
+=======
+                AudioManager.audioManager.PlaySound(tangSound);
+>>>>>>> parent of 3d9628f (ayayayayayay)
 =======
                 AudioManager.audioManager.PlaySound(tangSound);
 >>>>>>> parent of 3d9628f (ayayayayayay)
@@ -52,7 +56,11 @@ public class Obstacle : MonoBehaviour
             {
                 health--;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 SceneLoader.sceneLoader.PlaySound(tangSound);
+=======
+                AudioManager.audioManager.PlaySound(tangSound);
+>>>>>>> parent of 3d9628f (ayayayayayay)
 =======
                 AudioManager.audioManager.PlaySound(tangSound);
 >>>>>>> parent of 3d9628f (ayayayayayay)
@@ -67,7 +75,11 @@ public class Obstacle : MonoBehaviour
                 Destroyed(index);
                 inputPath.firstObsDestroyed = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 SceneLoader.sceneLoader.PlaySound(tangSound);
+=======
+                AudioManager.audioManager.PlaySound(tangSound);
+>>>>>>> parent of 3d9628f (ayayayayayay)
 =======
                 AudioManager.audioManager.PlaySound(tangSound);
 >>>>>>> parent of 3d9628f (ayayayayayay)
@@ -76,7 +88,11 @@ public class Obstacle : MonoBehaviour
             {
                 Destroyed(index);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 SceneLoader.sceneLoader.PlaySound(tangSound);
+=======
+                AudioManager.audioManager.PlaySound(tangSound);
+>>>>>>> parent of 3d9628f (ayayayayayay)
 =======
                 AudioManager.audioManager.PlaySound(tangSound);
 >>>>>>> parent of 3d9628f (ayayayayayay)
