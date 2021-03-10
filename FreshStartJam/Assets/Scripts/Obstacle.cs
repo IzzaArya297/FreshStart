@@ -16,12 +16,12 @@ public class Obstacle : MonoBehaviour
     
     public int index;
 
-    public AudioClip tangSound;
+    public AudioClip tangSound, destroy;
 
     // Start is called before the first frame update
     void Start()
     {
-        //inputPath = this.transform.parent.gameObject.GetComponentInParent<LineSource>();
+        inputPath = this.transform.parent.gameObject.GetComponentInParent<LineSource>();
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class Obstacle : MonoBehaviour
             if (inputPath.points.Count - 3 == index)
             {
                 health--;
-                //AudioManager.audioManager.PlaySound(tangSound);
+                SceneLoader.sceneLoader.PlaySound(tangSound);
             }
         }
         else
@@ -47,7 +47,7 @@ public class Obstacle : MonoBehaviour
             if (inputPath.points.Count - 2 == index)
             {
                 health--;
-                //AudioManager.audioManager.PlaySound(tangSound);
+                SceneLoader.sceneLoader.PlaySound(tangSound);
             }
         }
 
@@ -58,12 +58,12 @@ public class Obstacle : MonoBehaviour
                 Destroyed(index + 1);
                 Destroyed(index);
                 inputPath.firstObsDestroyed = true;
-                //AudioManager.audioManager.PlaySound(tangSound);
+                SceneLoader.sceneLoader.PlaySound(tangSound);
             }
             else
             {
                 Destroyed(index);
-                //AudioManager.audioManager.PlaySound(tangSound);
+                SceneLoader.sceneLoader.PlaySound(tangSound);
             }
         }
     }
@@ -72,6 +72,7 @@ public class Obstacle : MonoBehaviour
     {
         if (--GameManager.gameManager.kabelDiperlukan == 0)
             GameManager.gameManager.openWall = true;
+        SceneLoader.sceneLoader.PlaySound(destroy);
         Destroy(inputPath.Obstacle[i]);
         inputPath.points.RemoveAt(inputPath.points.Count - 1);
         inputPath.cable.positionCount--;
@@ -80,11 +81,17 @@ public class Obstacle : MonoBehaviour
     IEnumerator electrocuting()
     {
         emiting = true;
+        Invoke("Kedip", 3.5f);
         yield return new WaitForSeconds(timeEmit);
         electrocute.transform.localScale = Vector3.one * electrocuteRadius;
+        GetComponent<Animator>().SetTrigger("Idle");
         yield return new WaitForSeconds(2f);
         electrocute.transform.localScale = Vector3.one * 0.001f;
         emiting = false;
     }
 
+    void Kedip()
+    {
+        GetComponent<Animator>().Play("Electrocute");
+    }
 }

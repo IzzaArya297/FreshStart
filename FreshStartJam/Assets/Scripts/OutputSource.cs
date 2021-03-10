@@ -7,9 +7,10 @@ public class OutputSource : MonoBehaviour
 {
     public InputSource inputType;
     public Transform source;
-    public MultipleInputSource multInput;
 
     bool fastMode = true;
+
+    public MultipleInputSource multInput;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class OutputSource : MonoBehaviour
                 inputType.normalize();
                 inputType.player.canMove = true;
                 fastMode = false;
-                inputType.InvokeRepeating("SpawnElectro", 0.01f, 1 / inputType.deltaSpawnElectro);
+                inputType.InvokeRepeating("SpawnElectro", 1 / inputType.deltaSpawnElectro, 1 / inputType.deltaSpawnElectro);
             }
         }
     }
@@ -51,21 +52,17 @@ public class OutputSource : MonoBehaviour
                 inputType.cable.SetPositions(inputType.points.ToArray());
                 inputType.inputCondition = Condition.Connected;
                 //Spawn electro sebanyak deltaSpawnElectro perdetik
-                inputType.InvokeRepeating("SpawnElectro", 0.01f, 1/inputType.deltaSpawnElectro);
+                inputType.InvokeRepeating("SpawnElectro", 1 / inputType.deltaSpawnElectro, 1 / inputType.deltaSpawnElectro);
                 collision.gameObject.GetComponent<PlayerControl>().currentInput = null;
+                SceneLoader.sceneLoader.lengthLeft.text = "";
+                if (multInput != null)
+                    multInput.enable(multInput.currentInput);
                 if (--GameManager.gameManager.kabelDiperlukan == 0)
                     GameManager.gameManager.openWall = true;
-
-                
-                if(multInput != null)
-                {
-                    //multInput.currentInput++;
-                    multInput.enable(multInput.currentInput);
-                    Debug.Log("ada");
-                }
             }
             collision.gameObject.layer = 11;
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -28,7 +28,7 @@ public class LineSource : MonoBehaviour
             if(child.tag == "Obstacle")
             {
                 Obstacle.Add(child.gameObject);
-                Debug.Log(child.gameObject.name);
+                
             }
             
         }
